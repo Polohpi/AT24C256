@@ -6,9 +6,8 @@ AT24C256::AT24C256()
   
 }
 
-void AT24C256::Ecriture (byte val, int address ) 
+void AT24C256::write (byte val, int address ) 
 {
-  Serial.println("Ecriture de " + String(val) + " sur " + String(address));
   Wire.beginTransmission(EEPROM_I2C_ADDRESS);
   Wire.write((int)(address >> 8));   // MSB
   Wire.write(address & 0xFF); // LSB
@@ -20,7 +19,7 @@ void AT24C256::Ecriture (byte val, int address )
   delay(5);
 }
 
-int AT24C256::Lecture(int address ) 
+int AT24C256::read(int address ) 
 {
   byte rData = 0xFF;
  

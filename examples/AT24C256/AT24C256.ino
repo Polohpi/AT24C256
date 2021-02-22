@@ -12,7 +12,7 @@ AT24C256 eeprom = AT24C256();
 int val = 24;
 
 //The address on wich val will be wrote
-int Adresse = 0;
+int Add = 0;
 
 void setup() 
 {
@@ -28,10 +28,11 @@ void setup()
 void loop() 
 {
   //Write val to the address
-  eeprom.Ecriture(val, Adresse);
+  Serial.println("Writing of " + (String)val + " on " + (String)Add);
+  eeprom.write(val, Add);
 
   //print the val read in the address specified and print it to serial
-  Serial.println(eeprom.Lecture(Adresse));
+  Serial.println(eeprom.read(Add));
 
   //Stop
    while(1);
