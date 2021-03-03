@@ -2,7 +2,7 @@
 //The i2c address can be modified in AT24C256.h
 
 
-#include <Wire.h> //I2C library
+//I2C library
 #include "AT24C256.h"
 
 //Create Object
@@ -18,7 +18,6 @@ void setup()
 {
   //Start Serial and i2c
   Serial.begin(9600);
-  Wire.begin();
  
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
